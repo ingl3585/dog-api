@@ -10,6 +10,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use('/dogs', dogsController);
 
+app.get('/', (req, res) => {
+	res.json({
+		status: 200,
+		msg: 'Nothing to see here... try http://localhost:4000/dogs.',
+	});
+});
+
 app.listen('4000', () => {
 	console.log('Server running on port 4000');
 });
